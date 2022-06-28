@@ -24,6 +24,10 @@ namespace exercise_1
                 counter++;
             }
         }
+        public static void DeleteCategory(string category)
+        {
+            CategoriesNames.Remove(category);
+        }
 
     }
 }
