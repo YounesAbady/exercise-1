@@ -8,6 +8,9 @@ namespace exercise_1
 {
     internal class Recipe
     {
+        public Recipe()
+        {
+        }
         public Recipe(string title, List<string> ingredients, List<string> instructions, List<string> categories)
         {
             Title = title;
@@ -17,8 +20,8 @@ namespace exercise_1
         }
 
         public string Title { get; set; }
-        public List<string> Ingredients { get; set; }
-        public List<string> Instructions { get; set; }
-        public List<string> Categories { get; set; }
+        public List<string> Ingredients { get; set; } = new List<string>();
+        public List<string> Instructions { get; set; } = new List<string>();
+        public List<string> Categories { get; set; } = new List<string>();
     }
 }
