@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Spectre.Console;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,13 +17,25 @@ namespace exercise_1
         }
         public static void ListCategories()
         {
-            int counter = 1;
-            Console.WriteLine("All available categories : \n");
-            foreach (string category in CategoriesNames)
+            // Create the tree
+            var root = new Tree("Categories");
+            foreach (var category in CategoriesNames)
             {
-                Console.WriteLine($"{counter}-{category} \n");
-                counter++;
+                // Add some nodes
+                var node = root.AddNode($"[aqua]{category}[/]");
             }
+
+            // Render the tree
+            AnsiConsole.Write(root);  
+
+
+            //int counter = 1;
+            //Console.WriteLine("All available categories : \n");
+            //foreach (string category in CategoriesNames)
+            //{
+            //    Console.WriteLine($"{counter}-{category} \n");
+            //    counter++;
+            //}
         }
         public static void DeleteCategory(string category)
         {

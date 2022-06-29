@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "PvjaEz40KHwYYd8Kv/5kmRcxO1TT4v6TQZfudimg8qeFfgV/TK66ik6eUgLfnVhiLeMn1BiZolPZMzpkC+u4HQ==",
+  "dgSpecHash": "cx/r9VtZlLaJkx+ml9atQ2fyjByMucmhfcXOjRrFyLaSrgsVBBwIiiR1xqLso8P0AGq9gPiazsirvn87SqZkJg==",
   "success": true,
   "projectFilePath": "C:\\Users\\youne\\source\\repos\\exercise-1\\exercise-1\\exercise-1.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\youne\\.nuget\\packages\\spectre.console\\0.44.0\\spectre.console.0.44.0.nupkg.sha512"
+  ],
   "logs": []
 }

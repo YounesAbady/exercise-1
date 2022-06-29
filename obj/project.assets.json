@@ -1,11 +1,42 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "Spectre.Console/0.44.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Spectre.Console.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/Spectre.Console.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Spectre.Console/0.44.0": {
+      "sha512": "QMpKtn5QV1j2nklqDwuRE/XwbDn5jxww+Mt5J6Jn3EeQIzaLcuLyUhCLh/mS8giN6uXbqOV1ep5HlUGxrV1ujQ==",
+      "type": "package",
+      "path": "spectre.console/0.44.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net5.0/Spectre.Console.dll",
+        "lib/net5.0/Spectre.Console.xml",
+        "lib/net6.0/Spectre.Console.dll",
+        "lib/net6.0/Spectre.Console.xml",
+        "lib/netstandard2.0/Spectre.Console.dll",
+        "lib/netstandard2.0/Spectre.Console.xml",
+        "small-logo.png",
+        "spectre.console.0.44.0.nupkg.sha512",
+        "spectre.console.nuspec"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "Spectre.Console >= 0.44.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\youne\\.nuget\\packages\\": {}
@@ -46,6 +77,12 @@
     "frameworks": {
       "net6.0": {
         "targetAlias": "net6.0",
+        "dependencies": {
+          "Spectre.Console": {
+            "target": "Package",
+            "version": "[0.44.0, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",

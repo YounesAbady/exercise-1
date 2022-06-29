@@ -13,3 +13,5 @@ C:\Users\youne\source\repos\exercise-1\exercise-1\obj\Debug\net6.0\refint\exerci
 C:\Users\youne\source\repos\exercise-1\exercise-1\obj\Debug\net6.0\exercise-1.pdb
 C:\Users\youne\source\repos\exercise-1\exercise-1\obj\Debug\net6.0\exercise-1.genruntimeconfig.cache
 C:\Users\youne\source\repos\exercise-1\exercise-1\obj\Debug\net6.0\ref\exercise-1.dll
+C:\Users\youne\source\repos\exercise-1\exercise-1\bin\Debug\net6.0\Spectre.Console.dll
+C:\Users\youne\source\repos\exercise-1\exercise-1\obj\Debug\net6.0\exercise-1.csproj.CopyComplete
