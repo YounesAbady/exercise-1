@@ -13,7 +13,7 @@ validation of inputs
 testing
 # 2nd Day
 still missing:-
-edit recipes
-adjustments to UI
+adjustments to UI (can get better)
 testing 
 validation of input
+code kinda messy it can get better 

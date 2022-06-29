@@ -11,11 +11,11 @@ namespace exercise_1 // Note: actual namespace depends on the project name.
             var userInput = AnsiConsole.Prompt(
     new SelectionPrompt<string>()
         .Title("What's your [green]option[/]?")
-        .PageSize(6)
+        .PageSize(7)
         .MoreChoicesText("[grey](Move up and down to reveal more options)[/]")
         .AddChoices(new[] {
                     "For adding a category", "For adding a recipe", "For listing categories",
-                    "For listing recipes", "For Editing categories","Close the application"
+                    "For listing recipes", "For Editing categories","For editing Recipes","[red]Close the application[/]"
 
         }));
             string input = null;
@@ -45,6 +45,9 @@ namespace exercise_1 // Note: actual namespace depends on the project name.
                         Categories.Serialize();
                         Environment.Exit(0);
                         break;
+                    case "For editing Recipes":
+                        DataHandler.EditRecipe();
+                        break;
                     default:
                         Console.WriteLine("Enter a valid option!");
                         break;
@@ -58,7 +61,7 @@ namespace exercise_1 // Note: actual namespace depends on the project name.
         .MoreChoicesText("[grey](Move up and down to reveal more options)[/]")
         .AddChoices(new[] {
             "For adding a category", "For adding a recipe", "For listing categories",
-            "For listing recipes", "For Editing categories","Close the application"
+            "For listing recipes", "For Editing categories","For editing Recipes","Close the application"
 
         }));
                 Console.Clear();
