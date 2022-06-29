@@ -142,7 +142,7 @@ namespace exercise_1
                         counter++;
                     }
                     Console.WriteLine("Enter the number you want to edit or enter add for new instruction");
-                     input = Console.ReadLine();
+                    input = Console.ReadLine();
                     if (input.Equals("add"))
                     {
                         Console.WriteLine("Enter new instruction");
@@ -193,13 +193,17 @@ namespace exercise_1
         }
         public static void Serialize()
         {
-            string fileName = @"C:\Users\youne\source\repos\exercise-1\exercise-1\Recipes.json";
+            //string fileName = @"C:\Users\youne\source\repos\exercise-1\exercise-1\Recipes.json";
+            string startupPath = Environment.CurrentDirectory;
+            string fileName = @$"{startupPath}\Recipes.json";
             string jsonString = JsonSerializer.Serialize(_Recipes);
             File.WriteAllText(fileName, jsonString);
         }
         public static void Deserialize()
         {
-            string fileName = @"C:\Users\youne\source\repos\exercise-1\exercise-1\Recipes.json";
+            //string fileName = @"C:\Users\youne\source\repos\exercise-1\exercise-1\Recipes.json";
+            string startupPath = Environment.CurrentDirectory;
+            string fileName = @$"{startupPath}\Recipes.json";
             string jsonString = File.ReadAllText(fileName);
             _Recipes = JsonSerializer.Deserialize<List<Recipe>>(jsonString);
         }

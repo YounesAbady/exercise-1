@@ -50,13 +50,17 @@ namespace exercise_1
         }
         public static void Serialize()
         {
-            string fileName = @"C:\Users\youne\source\repos\exercise-1\exercise-1\Categories.json";
+            //string fileName = @"C:\Users\youne\source\repos\exercise-1\exercise-1\Categories.json";
+            string startupPath = Environment.CurrentDirectory;
+            string fileName = @$"{startupPath}\Categories.json";
             string jsonString = JsonSerializer.Serialize(CategoriesNames);
             File.WriteAllText(fileName, jsonString);
         }
         public static void Deserialize()
         {
-            string fileName = @"C:\Users\youne\source\repos\exercise-1\exercise-1\Categories.json";
+            //string fileName = @"C:\Users\youne\source\repos\exercise-1\exercise-1\Categories.json";
+            string startupPath = Environment.CurrentDirectory;
+            string fileName = @$"{startupPath}\Categories.json";
             string jsonString = File.ReadAllText(fileName);
             CategoriesNames = JsonSerializer.Deserialize<List<string>>(jsonString);
         }

@@ -17,3 +17,4 @@ adjustments to UI (can get better)
 testing 
 validation of input
 code kinda messy it can get better 
+need to adjust AddCategory with adding  multiselection tool from spectre console and make sure you must select at least 1
