@@ -6,6 +6,8 @@ namespace exercise_1 // Note: actual namespace depends on the project name.
     {
         static void Main(string[] args)
         {
+            DataHandler.Deserialize();
+            Categories.Deserialize();
             var userInput = AnsiConsole.Prompt(
     new SelectionPrompt<string>()
         .Title("What's your [green]option[/]?")
@@ -17,46 +19,17 @@ namespace exercise_1 // Note: actual namespace depends on the project name.
 
         }));
             string input = null;
+            int counter;
             while (userInput != "x")
             {
                 switch (userInput)
                 {
 
                     case "For adding a category":
-                        Console.WriteLine("Enter Category name");
-                        var category = Console.ReadLine();
-                        Categories.AddCategory(category);
+                        Categories.AddCategory();
                         break;
                     case "For adding a recipe":
-                        Recipe recipe = new Recipe();
-                        Console.WriteLine("Enter recipe name");
-                        recipe.Title = Console.ReadLine();
-                        for (int counter = 1; input != "x"; counter++)
-                        {
-                            Console.WriteLine($"Enter ingredient number {counter} or x to go to the next step");
-                            input = Console.ReadLine();
-                            if (input == "x") break;
-                            recipe.Ingredients.Add(input);
-                        }
-                        input = null;
-
-                        for (int counter = 1; input != "x"; counter++)
-                        {
-                            Console.WriteLine($"Enter instruction number {counter} or x to go to the next step");
-                            input = Console.ReadLine();
-                            if (input == "x") break;
-                            recipe.Instructions.Add(input);
-                        }
-                        Categories.ListCategories();
-                        input = null;
-                        while (input != "x")
-                        {
-                            Console.WriteLine("Enter Category number from list or x to go to the next step");
-                            input = Console.ReadLine();
-                            if (input == "x") break;
-                            recipe.Categories.Add(Categories.CategoriesNames[int.Parse(input) - 1]);
-                        }
-                        DataHandler.AddRecipe(recipe);
+                        DataHandler.AddRecipe();
                         break;
                     case "For listing categories":
                         Categories.ListCategories();
@@ -65,19 +38,15 @@ namespace exercise_1 // Note: actual namespace depends on the project name.
                         DataHandler.ListRecipes();
                         break;
                     case "For Editing categories":
-                        Categories.ListCategories();
-                        Console.WriteLine("Please select number of category to edit");
-                        input = Console.ReadLine();
-                        Console.WriteLine("If you want to delete it enter x or enter new name to edit it");
-                        string newName = Console.ReadLine();
-                        if (newName == "x") { Categories.DeleteCategory(Categories.CategoriesNames[int.Parse(input) - 1]); break; }
-                        Categories.CategoriesNames[int.Parse(input) - 1] = newName;
+                        Categories.EditCategory();
                         break;
                     case "Close the application":
+                        DataHandler.Serialize();
+                        Categories.Serialize();
                         Environment.Exit(0);
                         break;
                     default:
-                        Console.WriteLine("Enter a valid number!");
+                        Console.WriteLine("Enter a valid option!");
                         break;
                 }
 

@@ -11,3 +11,9 @@ ui with spectre console
 edit recipes
 validation of inputs
 testing
+# 2nd Day
+still missing:-
+edit recipes
+adjustments to UI
+testing 
+validation of input
