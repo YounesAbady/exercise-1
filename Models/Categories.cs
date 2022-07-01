@@ -6,7 +6,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace exercise_1
+namespace exercise_1.Models
 {
     internal class Categories
     {
@@ -39,14 +39,14 @@ namespace exercise_1
         }
         public static void EditCategory()
         {
-            string input = null;
-            Categories.ListCategories();
+            string input = String.Empty;
+            ListCategories();
             Console.WriteLine("Please select number of category to edit");
             input = Console.ReadLine();
             Console.WriteLine("If you want to delete it enter x or enter new name to edit it");
             string newName = Console.ReadLine();
-            if (newName == "x") { Categories.DeleteCategory(Categories.CategoriesNames[int.Parse(input) - 1]); }
-            else { Categories.CategoriesNames[int.Parse(input) - 1] = newName; }
+            if (newName == "x") { DeleteCategory(CategoriesNames[int.Parse(input) - 1]); }
+            else { CategoriesNames[int.Parse(input) - 1] = newName; }
         }
         public static void Serialize()
         {

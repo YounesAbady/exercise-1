@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace exercise_1
+namespace exercise_1.Models
 {
     internal class Recipe
     {
@@ -19,7 +19,7 @@ namespace exercise_1
             Categories = categories;
         }
 
-        public string Title { get; set; }
+        public string Title { get; set; } = string.Empty;
         public List<string> Ingredients { get; set; } = new List<string>();
         public List<string> Instructions { get; set; } = new List<string>();
         public List<string> Categories { get; set; } = new List<string>();

@@ -1,4 +1,5 @@
 ﻿using System;
+using exercise_1.Models;
 using Spectre.Console;
 namespace exercise_1 // Note: actual namespace depends on the project name.
 {
@@ -18,8 +19,6 @@ namespace exercise_1 // Note: actual namespace depends on the project name.
                     "For listing recipes", "For Editing categories","For editing Recipes","[red]Close the application[/]"
 
         }));
-            string input = null;
-            int counter;
             while (userInput != "x")
             {
                 switch (userInput)

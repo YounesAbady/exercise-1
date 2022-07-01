@@ -1,4 +1,5 @@
-﻿using Spectre.Console;
+﻿using exercise_1.Models;
+using Spectre.Console;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,7 @@ namespace exercise_1
 
         public static void AddRecipe()
         {
-            string input = null;
+            string input = String.Empty;
             Recipe recipe = new Recipe();
             Console.WriteLine("Enter recipe name");
             recipe.Title = Console.ReadLine();
@@ -26,7 +27,7 @@ namespace exercise_1
                 if (input == "x") break;
                 recipe.Ingredients.Add(input);
             }
-            input = null;
+            input =String.Empty;
 
             for (counter = 1; input != "x"; counter++)
             {
@@ -36,7 +37,7 @@ namespace exercise_1
                 recipe.Instructions.Add(input);
             }
             Categories.ListCategories();
-            input = null;
+            input = String.Empty;
             while (input != "x")
             {
                 Console.WriteLine("Enter Category number from list or x to go to the next step");
@@ -44,7 +45,7 @@ namespace exercise_1
                 if (input == "x") break;
                 recipe.Categories.Add(Categories.CategoriesNames[int.Parse(input) - 1]);
             }
-            input = null;
+            input = String.Empty;
             _Recipes.Add(recipe);
         }
         public static void ListRecipes()
