@@ -11,9 +11,8 @@ namespace exercise_1
 {
     internal class DataHandler
     {
-        private static List<Recipe> _Recipes { get; set; } = new List<Recipe>();
+        public static List<Recipe> Recipes { get; set; } = new List<Recipe>();
         static int counter;
-
         public static void AddRecipe()
         {
             string input = String.Empty;
@@ -27,7 +26,7 @@ namespace exercise_1
                 if (input == "x") break;
                 recipe.Ingredients.Add(input);
             }
-            input =String.Empty;
+            input = String.Empty;
 
             for (counter = 1; input != "x"; counter++)
             {
@@ -46,41 +45,35 @@ namespace exercise_1
                 recipe.Categories.Add(Categories.CategoriesNames[int.Parse(input) - 1]);
             }
             input = String.Empty;
-            _Recipes.Add(recipe);
+            Recipes.Add(recipe);
         }
         public static void ListRecipes()
         {
             int recipesCounter = 1;
             var root = new Tree("[lime]Recipes[/]");
-            foreach (Recipe recipe in _Recipes)
+            foreach (Recipe recipe in Recipes)
             {
                 var recipeTitle = root.AddNode($"{recipesCounter}-[maroon]{recipe.Title}[/]");
-                //Console.WriteLine($"Recipe title:{recipe.Title} \n Ingredients : \n");
                 counter = 1;
                 var ingerdientsNode = recipeTitle.AddNode("[red]Ingredients:[/]");
                 foreach (var ingerdient in recipe.Ingredients)
                 {
                     ingerdientsNode.AddNode($"{counter}-{ingerdient}");
-                    //Console.WriteLine($"{counter}-{ingerdient} \n");
                     counter++;
                 }
                 var instructionsNode = recipeTitle.AddNode("[red]Instructions:[/]");
-                //Console.WriteLine("Instructions : \n");
                 counter = 1;
                 foreach (var instructions in recipe.Instructions)
                 {
                     instructionsNode.AddNode($"{counter}-{instructions}");
-                    //Console.WriteLine($"{counter}-{instructions} \n");
                     counter++;
 
                 }
                 counter = 1;
                 var categoriesNode = recipeTitle.AddNode("[red]Categories:[/]");
-                //Console.WriteLine("Categories : \n");
                 foreach (var category in recipe.Categories)
                 {
                     categoriesNode.AddNode($"{counter}-{category}");
-                    //Console.WriteLine($"{counter}-{category} \n");
                     counter++;
 
                 }
@@ -93,7 +86,7 @@ namespace exercise_1
             ListRecipes();
             Console.WriteLine("Enter the number of recipe you want to edit");
             int recipeNumber = int.Parse(Console.ReadLine()) - 1;
-            Recipe oldRecipe = _Recipes[recipeNumber];
+            Recipe oldRecipe = Recipes[recipeNumber];
             var userInput = AnsiConsole.Prompt(
     new SelectionPrompt<string>()
         .Title("What do you want to [green]EDIT[/]?")
@@ -184,31 +177,27 @@ namespace exercise_1
                     }
                     break;
                 case "Delete Recipe":
-                    _Recipes.Remove(oldRecipe);
+                    Recipes.Remove(oldRecipe);
                     break;
                 default:
                     Console.WriteLine("Wrong Choice");
                     break;
             }
-            _Recipes[recipeNumber] = oldRecipe;
+            Recipes[recipeNumber] = oldRecipe;
         }
         public static void Serialize()
         {
-            //string fileName = @"C:\Users\youne\source\repos\exercise-1\exercise-1\Recipes.json";
             string startupPath = Environment.CurrentDirectory;
             string fileName = @$"{startupPath}\Recipes.json";
-            string jsonString = JsonSerializer.Serialize(_Recipes);
+            string jsonString = JsonSerializer.Serialize(Recipes);
             File.WriteAllText(fileName, jsonString);
         }
         public static void Deserialize()
         {
-            //string fileName = @"C:\Users\youne\source\repos\exercise-1\exercise-1\Recipes.json";
             string startupPath = Environment.CurrentDirectory;
             string fileName = @$"{startupPath}\Recipes.json";
             string jsonString = File.ReadAllText(fileName);
-            _Recipes = JsonSerializer.Deserialize<List<Recipe>>(jsonString);
+            Recipes = JsonSerializer.Deserialize<List<Recipe>>(jsonString);
         }
-
-
     }
 }

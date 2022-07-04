@@ -51,8 +51,6 @@ namespace exercise_1 // Note: actual namespace depends on the project name.
                         Console.WriteLine("Enter a valid option!");
                         break;
                 }
-
-                //Console.WriteLine("Enter number for new opreation or x for closing the app");
                 userInput = AnsiConsole.Prompt(
     new SelectionPrompt<string>()
         .Title("What's your [green]option[/]?")
@@ -64,11 +62,7 @@ namespace exercise_1 // Note: actual namespace depends on the project name.
 
         }));
                 Console.Clear();
-                //userInput = Console.ReadLine();
             }
-
         }
-
-
     }
 }
