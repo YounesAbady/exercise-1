@@ -94,7 +94,7 @@ namespace exercise_1
         .MoreChoicesText("[grey](Move up and down to reveal more options)[/]")
         .AddChoices(new[] {
                     "Title", "Ingredients", "Instructions",
-                    "categories", "[red]Delete Recipe[/]"
+                    "Categories", "[red]Delete Recipe[/]"
         }));
             switch (userInput)
             {
@@ -154,7 +154,7 @@ namespace exercise_1
                             oldRecipe.Instructions[int.Parse(input) - 1] = newData;
                     }
                     break;
-                case "categories":
+                case "Categories":
                     counter = 1;
                     foreach (var category in oldRecipe.Categories)
                     {
@@ -176,7 +176,7 @@ namespace exercise_1
                         oldRecipe.Categories.Remove(oldCategory);
                     }
                     break;
-                case "Delete Recipe":
+                case "[red]Delete Recipe[/]":
                     Recipes.Remove(oldRecipe);
                     break;
                 default:

@@ -39,7 +39,7 @@ namespace exercise_1 // Note: actual namespace depends on the project name.
                     case "For Editing categories":
                         Categories.EditCategory();
                         break;
-                    case "Close the application":
+                    case "[red]Close the application[/]":
                         DataHandler.Serialize();
                         Categories.Serialize();
                         Environment.Exit(0);
@@ -58,7 +58,7 @@ namespace exercise_1 // Note: actual namespace depends on the project name.
         .MoreChoicesText("[grey](Move up and down to reveal more options)[/]")
         .AddChoices(new[] {
             "For adding a category", "For adding a recipe", "For listing categories",
-            "For listing recipes", "For Editing categories","For editing Recipes","Close the application"
+            "For listing recipes", "For Editing categories","For editing Recipes","[red]Close the application[/]"
 
         }));
                 Console.Clear();
