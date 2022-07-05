@@ -16,7 +16,7 @@ namespace exercise_1 // Note: actual namespace depends on the project name.
         .MoreChoicesText("[grey](Move up and down to reveal more options)[/]")
         .AddChoices(new[] {
                     "For adding a category", "For adding a recipe", "For listing categories",
-                    "For listing recipes", "For Editing categories","For editing Recipes","[red]Close the application[/]"
+                    "For listing recipes", "For editing categories","For editing recipes","[red]Close the application[/]"
 
         }));
             while (userInput != "x")
@@ -36,7 +36,7 @@ namespace exercise_1 // Note: actual namespace depends on the project name.
                     case "For listing recipes":
                         DataHandler.ListRecipes();
                         break;
-                    case "For Editing categories":
+                    case "For editing categories":
                         Categories.EditCategory();
                         break;
                     case "[red]Close the application[/]":
@@ -44,7 +44,7 @@ namespace exercise_1 // Note: actual namespace depends on the project name.
                         Categories.Serialize();
                         Environment.Exit(0);
                         break;
-                    case "For editing Recipes":
+                    case "For editing recipes":
                         DataHandler.EditRecipe();
                         break;
                     default:
@@ -58,7 +58,7 @@ namespace exercise_1 // Note: actual namespace depends on the project name.
         .MoreChoicesText("[grey](Move up and down to reveal more options)[/]")
         .AddChoices(new[] {
             "For adding a category", "For adding a recipe", "For listing categories",
-            "For listing recipes", "For Editing categories","For editing Recipes","[red]Close the application[/]"
+            "For listing recipes", "For editing categories","For editing recipes","[red]Close the application[/]"
 
         }));
                 Console.Clear();
