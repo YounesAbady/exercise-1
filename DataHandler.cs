@@ -46,39 +46,80 @@ namespace exercise_1
             input = String.Empty;
             Recipes.Add(recipe);
         }
+        //public static void ListRecipes()
+        //{
+        //    int recipesCounter = 1;
+        //    var root = new Tree("[lime]Recipes[/]");
+        //    foreach (Recipe recipe in Recipes)
+        //    {
+        //        var recipeTitle = root.AddNode($"{recipesCounter}-[maroon]{recipe.Title}[/]");
+        //        counter = 1;
+        //        var ingerdientsNode = recipeTitle.AddNode("[red]Ingredients:[/]");
+        //        foreach (var ingerdient in recipe.Ingredients)
+        //        {
+        //            ingerdientsNode.AddNode($"{counter}-{ingerdient}");
+        //            counter++;
+        //        }
+        //        var instructionsNode = recipeTitle.AddNode("[red]Instructions:[/]");
+        //        counter = 1;
+        //        foreach (var instructions in recipe.Instructions)
+        //        {
+        //            instructionsNode.AddNode($"{counter}-{instructions}");
+        //            counter++;
+
+        //        }
+        //        counter = 1;
+        //        var categoriesNode = recipeTitle.AddNode("[red]Categories:[/]");
+        //        foreach (var category in recipe.Categories)
+        //        {
+        //            categoriesNode.AddNode($"{counter}-{category}");
+        //            counter++;
+
+        //        }
+        //        recipesCounter++;
+        //    }
+        //    AnsiConsole.Write(root);
+        //}
         public static void ListRecipes()
         {
             int recipesCounter = 1;
-            var root = new Tree("[lime]Recipes[/]");
+            var table = new Table();
+            table.Centered();
+            table.Expand();
+            table.Title = new TableTitle("[green]Recipes[/]");
+            table.AddColumn(new TableColumn("[aqua]Title[/]").Centered());
+            table.AddColumn(new TableColumn("[aqua]Ingredients[/]").Centered());
+            table.AddColumn(new TableColumn("[aqua]Instructions[/]").Centered());
+            table.AddColumn(new TableColumn("[aqua]Categories[/]").Centered());
+            table.Border(TableBorder.Rounded);
             foreach (Recipe recipe in Recipes)
             {
-                var recipeTitle = root.AddNode($"{recipesCounter}-[maroon]{recipe.Title}[/]");
+                var ingredients = new StringBuilder();
                 counter = 1;
-                var ingerdientsNode = recipeTitle.AddNode("[red]Ingredients:[/]");
-                foreach (var ingerdient in recipe.Ingredients)
+                foreach (string item in recipe.Ingredients)
                 {
-                    ingerdientsNode.AddNode($"{counter}-{ingerdient}");
+                    ingredients.Append($"{counter} - {item} \n");
                     counter++;
                 }
-                var instructionsNode = recipeTitle.AddNode("[red]Instructions:[/]");
                 counter = 1;
-                foreach (var instructions in recipe.Instructions)
+                var instructions = new StringBuilder();
+                foreach (string item in recipe.Instructions)
                 {
-                    instructionsNode.AddNode($"{counter}-{instructions}");
+                    instructions.Append($"{counter} - {item} \n");
                     counter++;
-
                 }
                 counter = 1;
-                var categoriesNode = recipeTitle.AddNode("[red]Categories:[/]");
-                foreach (var category in recipe.Categories)
+                var categories = new StringBuilder();
+                foreach (string item in recipe.Categories)
                 {
-                    categoriesNode.AddNode($"{counter}-{category}");
+                    categories.Append($"{counter} - {item} \n");
                     counter++;
-
                 }
+                table.AddRow($"{recipesCounter} - {recipe.Title}",ingredients.ToString(),instructions.ToString(),categories.ToString());
+                table.AddEmptyRow();
                 recipesCounter++;
             }
-            AnsiConsole.Write(root);
+            AnsiConsole.Write(table);
         }
         public static void EditRecipe()
         {
