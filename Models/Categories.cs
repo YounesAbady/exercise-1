@@ -11,7 +11,6 @@ namespace exercise_1.Models
     internal class Categories
     {
         public static List<string> CategoriesNames { get; set; } = new List<string>();
-
         public static void AddCategory()
         {
             Console.WriteLine("Enter Category name");
@@ -29,7 +28,6 @@ namespace exercise_1.Models
                 var node = root.AddNode($"{counter}-[aqua]{category}[/]");
                 counter++;
             }
-
             // Render the tree
             AnsiConsole.Write(root);
         }

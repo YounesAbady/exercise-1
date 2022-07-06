@@ -18,7 +18,6 @@ namespace exercise_1.Models
             Instructions = instructions;
             Categories = categories;
         }
-
         public string Title { get; set; } = string.Empty;
         public List<string> Ingredients { get; set; } = new List<string>();
         public List<string> Instructions { get; set; } = new List<string>();

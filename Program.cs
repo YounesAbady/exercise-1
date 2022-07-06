@@ -17,13 +17,11 @@ namespace exercise_1 // Note: actual namespace depends on the project name.
         .AddChoices(new[] {
                     "For adding a category", "For adding a recipe", "For listing categories",
                     "For listing recipes", "For editing categories","For editing recipes","[red]Close the application[/]"
-
         }));
             while (userInput != "x")
             {
                 switch (userInput)
                 {
-
                     case "For adding a category":
                         Categories.AddCategory();
                         break;
@@ -59,7 +57,6 @@ namespace exercise_1 // Note: actual namespace depends on the project name.
         .AddChoices(new[] {
             "For adding a category", "For adding a recipe", "For listing categories",
             "For listing recipes", "For editing categories","For editing recipes","[red]Close the application[/]"
-
         }));
                 Console.Clear();
             }

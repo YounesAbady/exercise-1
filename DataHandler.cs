@@ -27,7 +27,6 @@ namespace exercise_1
                 recipe.Ingredients.Add(input);
             }
             input = String.Empty;
-
             for (counter = 1; input != "x"; counter++)
             {
                 Console.WriteLine($"Enter instruction number {counter} or x to go to the next step");
