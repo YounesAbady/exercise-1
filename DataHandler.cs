@@ -46,40 +46,6 @@ namespace exercise_1
             input = String.Empty;
             Recipes.Add(recipe);
         }
-        //public static void ListRecipes()
-        //{
-        //    int recipesCounter = 1;
-        //    var root = new Tree("[lime]Recipes[/]");
-        //    foreach (Recipe recipe in Recipes)
-        //    {
-        //        var recipeTitle = root.AddNode($"{recipesCounter}-[maroon]{recipe.Title}[/]");
-        //        counter = 1;
-        //        var ingerdientsNode = recipeTitle.AddNode("[red]Ingredients:[/]");
-        //        foreach (var ingerdient in recipe.Ingredients)
-        //        {
-        //            ingerdientsNode.AddNode($"{counter}-{ingerdient}");
-        //            counter++;
-        //        }
-        //        var instructionsNode = recipeTitle.AddNode("[red]Instructions:[/]");
-        //        counter = 1;
-        //        foreach (var instructions in recipe.Instructions)
-        //        {
-        //            instructionsNode.AddNode($"{counter}-{instructions}");
-        //            counter++;
-
-        //        }
-        //        counter = 1;
-        //        var categoriesNode = recipeTitle.AddNode("[red]Categories:[/]");
-        //        foreach (var category in recipe.Categories)
-        //        {
-        //            categoriesNode.AddNode($"{counter}-{category}");
-        //            counter++;
-
-        //        }
-        //        recipesCounter++;
-        //    }
-        //    AnsiConsole.Write(root);
-        //}
         public static void ListRecipes()
         {
             int recipesCounter = 1;
