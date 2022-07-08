@@ -81,7 +81,7 @@ namespace exercise_1
                     categories.Append($"{counter} - {item} \n");
                     counter++;
                 }
-                table.AddRow($"{recipesCounter} - {recipe.Title}",ingredients.ToString(),instructions.ToString(),categories.ToString());
+                table.AddRow($"{recipesCounter} - {recipe.Title}", ingredients.ToString(), instructions.ToString(), categories.ToString());
                 table.AddEmptyRow();
                 recipesCounter++;
             }
@@ -94,14 +94,14 @@ namespace exercise_1
             int recipeNumber = int.Parse(Console.ReadLine()) - 1;
             Recipe oldRecipe = Recipes[recipeNumber];
             var userInput = AnsiConsole.Prompt(
-    new SelectionPrompt<string>()
-        .Title("What do you want to [green]EDIT[/]?")
-        .PageSize(7)
-        .MoreChoicesText("[grey](Move up and down to reveal more options)[/]")
-        .AddChoices(new[] {
-                    "Title", "Ingredients", "Instructions",
-                    "Categories", "[red]Delete Recipe[/]"
-        }));
+                new SelectionPrompt<string>()
+                    .Title("What do you want to [green]EDIT[/]?")
+                    .PageSize(7)
+                    .MoreChoicesText("[grey](Move up and down to reveal more options)[/]")
+                    .AddChoices(new[] {
+                                "Title", "Ingredients", "Instructions",
+                                "Categories", "[red]Delete Recipe[/]"
+                    }));
             switch (userInput)
             {
                 case "Title":

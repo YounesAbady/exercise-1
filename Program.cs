@@ -10,14 +10,14 @@ namespace exercise_1 // Note: actual namespace depends on the project name.
             DataHandler.Deserialize();
             Categories.Deserialize();
             var userInput = AnsiConsole.Prompt(
-    new SelectionPrompt<string>()
-        .Title("What's your [green]option[/]?")
-        .PageSize(7)
-        .MoreChoicesText("[grey](Move up and down to reveal more options)[/]")
-        .AddChoices(new[] {
-                    "For adding a category", "For adding a recipe", "For listing categories",
-                    "For listing recipes", "For editing categories","For editing recipes","[red]Close the application[/]"
-        }));
+                new SelectionPrompt<string>()
+                    .Title("What's your [green]option[/]?")
+                    .PageSize(7)
+                    .MoreChoicesText("[grey](Move up and down to reveal more options)[/]")
+                    .AddChoices(new[] {
+                                "For adding a category", "For adding a recipe", "For listing categories",
+                                "For listing recipes", "For editing categories","For editing recipes","[red]Close the application[/]"
+                    }));
             while (userInput != "x")
             {
                 switch (userInput)
@@ -50,14 +50,14 @@ namespace exercise_1 // Note: actual namespace depends on the project name.
                         break;
                 }
                 userInput = AnsiConsole.Prompt(
-    new SelectionPrompt<string>()
-        .Title("What's your [green]option[/]?")
-        .PageSize(10)
-        .MoreChoicesText("[grey](Move up and down to reveal more options)[/]")
-        .AddChoices(new[] {
-            "For adding a category", "For adding a recipe", "For listing categories",
-            "For listing recipes", "For editing categories","For editing recipes","[red]Close the application[/]"
-        }));
+                    new SelectionPrompt<string>()
+                        .Title("What's your [green]option[/]?")
+                        .PageSize(10)
+                        .MoreChoicesText("[grey](Move up and down to reveal more options)[/]")
+                        .AddChoices(new[] {
+                            "For adding a category", "For adding a recipe", "For listing categories",
+                            "For listing recipes", "For editing categories","For editing recipes","[red]Close the application[/]"
+                        }));
                 Console.Clear();
             }
         }
